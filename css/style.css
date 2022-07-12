@@ -16,8 +16,14 @@ body{
     background-color: black;
 }
 
-h1, h2, h3, h4, h5, h6{
-    color: var(--fontPrimaryColor);
+h1, h2, h3, h4, h5, h6, p{
+    color: var(--fontPrimaryColor);    
+    text-align: center;
+    word-wrap: break-word;
+}
+
+p {
+    color: var(--fontSecondaryColor);
 }
 
 /* Navbar container */

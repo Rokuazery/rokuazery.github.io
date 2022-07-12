@@ -3,9 +3,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rokuazery's Website</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Rokuazery: Home</title>
 </head>
 <body>
-    Hello World
+    <div class="background"></div>
+
+    <div class="navbar">
+        <a class="nav-a" id="page-home">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">My Projects <span style="font-size: 0.7rem;">▼</span>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" close>
+              <a class="nav-a" id="page-lol-assist">LoL Assist</a>
+            </div>
+          </div>
+        <a class="nav-a" id="page-about">About Me</a>
+    </div>
+
+    <div class="content">
+   
+        <div id="page-home" class="page" page-active>
+            <h2>Welcome to Rokuazery's website</h2>
+            <button class="btn">Lorem Ipsum</button>
+        </div>
+
+        <div id="page-about" class="page">
+            <h2>About Me</h2>
+            <p>I like turtles</p>
+        </div>
+
+        <div id="page-lol-assist" class="page">
+            <h2>LoL Assist</h2>
+            <p>LoL Assist is an automatic runes & spells editor</p>
+            <button class="btn">Download</button>
+        </div>
+    </div>
 </body>
+<script src="scripts/index.js"></script> 
 </html>

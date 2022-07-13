@@ -11,21 +11,24 @@
 <body>
     <div class="background"></div>
 
-    <div class="navbar">
+    <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+    </button>
+
+    <div id="main-nav" class="navbar" data-visible="false">
         <a class="nav-a" id="page-home">Home</a>
         <div class="dropdown">
-            <button class="dropbtn">My Projects <span style="font-size: 0.7rem;">▼</span>
+            <button class="dropbtn">Projects <span style="font-size: 0.7rem;">▼</span>
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" close>
               <a class="nav-a" id="page-lol-assist">LoL Assist</a>
             </div>
           </div>
-        <a class="nav-a" id="page-about">About Me</a>
+        <a class="nav-a" id="page-about">About me</a>
     </div>
 
     <div class="content">
-   
         <div id="page-home" class="page" page-active>
             <h2>Welcome to Rokuazery's website</h2>
             <button class="btn">Lorem Ipsum</button>
@@ -43,5 +46,6 @@
         </div>
     </div>
 </body>
-<script src="scripts/index.js"></script> 
+<script src="scripts/index.js" defer></script> 
+<script src="scripts/nav.js" defer></script> 
 </html>

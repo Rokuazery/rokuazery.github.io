@@ -1,40 +1,77 @@
 :root{
-    --fontPrimaryColor: white;
-    --fontSecondaryColor: Silver;
-    --primaryColor: rgb(42, 42,42);
-    --secondaryColor: rgb(32, 32,32);
+    --colorFontPrimary: white;
+    --colorFontSecondary: Silver;
+    --colorPrimary: rgb(42, 42,42);
+    --colorSecondary: rgb(32, 32,32);
+    --colorAccent: #005CEC;
 }
 
 *{
     font-weight: 600;
-    color: var(--fontPrimaryColor);
+    color: var(--colorFontPrimary);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
     margin: 0;
     background-color: black;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p{
-    color: var(--fontPrimaryColor);    
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    color: var(--colorFontPrimary);    
     text-align: center;
     word-wrap: break-word;
 }
 
 p {
-    color: var(--fontSecondaryColor);
+    color: var(--colorFontSecondary);
 }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--colorSecondary);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.3);
+  }
 
 /* Navbar container */
 .navbar {
     overflow: hidden;
-    background-color: var(--primaryColor);
+    background-color: var(--colorPrimary);
     font-family: Arial;
+    z-index:99;
   }
   
   /* Links inside the navbar */
-  .navbar a {
+  .navbar a, .dropdown-content a {
     float: left;
     font-size: 1rem;
     color: white;
@@ -43,59 +80,47 @@ p {
     text-decoration: none;
   }
   
-  /* The dropdown container */
   .dropdown {
     float: left;
     overflow: hidden;
   }
   
-  /* Dropdown button */
   .dropdown .dropbtn {
     font-size: 1rem;
     border: none;
     outline: none;
-    color: var(--fontPrimaryColor);
+    color: var(--colorFontPrimary);
     padding: 14px 16px;
     background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
+    font-family: inherit;
+    margin: 0;
     transition: ease-in-out 350ms;
 }
   
-  /* Add a red background color to navbar links on hover */
-  .navbar a:hover, .dropdown:hover .dropbtn {
+  .dropbtn {
     background-color: rgba(255,255,255,0.06);
   }
-  
-  /* Dropdown content (hidden by default) */
+    
+  .dropdown-content a {
+    color: var(--colorFontSecondary);
+    min-width: 150px;
+  }
+
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--secondaryColor);
+    background-color: var(--colorSecondary);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    float: none;
-    color: var(--fontSecondaryColor);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    transition: ease-in-out 350ms;
+
+.dropdown-content a:active , .dropbtn:active, .navbar a:active{
+    color: var(--colorFontPrimary);
+    background-color: rgba(255,255,255,0.03);
 }
-  
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    color: var(--fontPrimaryColor);
-    background-color: rgba(255,255,255,0.06);
-}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
+
+.dropdown:hover .dropdown-content {
     display: block;
     animation: fade-in 350ms forwards;
     pointer-events: all;
@@ -116,7 +141,7 @@ p {
 }
 
 .page[page-active]{
-    z-index: 1;
+    z-index: 5;
     animation: slide-up 500ms forwards, fade-in 550ms forwards;
     animation-delay: 500ms;
 }
@@ -130,21 +155,21 @@ p {
     height: 100%;
     position: fixed;
     background-image: url('../assets/background.jpg');
+    filter: blur(0.15rem);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    filter: blur(0.15rem);
+    background-position: center;
+    background-size:cover;
     opacity: 0.5;
     z-index: -1;
 }
 
 .btn{
     font-size: 1rem;
-    color: var(--fontSecondaryColor);
+    color: var(--colorFontSecondary);
     background-color: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(0.15rem);
     border-radius: 0.4rem;
     opacity: 1;
 
@@ -155,9 +180,19 @@ p {
     transition: ease-in-out 350ms;
 }
 
-.btn:hover {
-    color: var(--fontPrimaryColor);
-    background-color: rgba(255,255,255,0.2);
+@media (hover: hover) and (pointer: fine) {
+    /* css hover class/style */
+    .btn:hover {
+        color: var(--colorFontPrimary);
+        background-color: rgba(255,255,255,0.2);
+    }
+    .navbar a:hover, .dropdown:hover {
+        background-color: rgba(255,255,255,0.06);
+    }
+    .dropdown-content a:hover {
+        color: var(--colorFontPrimary);
+        background-color: rgba(255,255,255,0.03);
+    }
 }
 
 .btn:active{
@@ -173,6 +208,69 @@ p {
     border-spacing: 0;
     padding: 0;
     margin: 0;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.mobile-nav-toggle {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    background: transparent;
+    background-image: url("../assets/icon-menu-white.svg");
+    background-repeat: no-repeat;
+    border: 0;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("../assets/icon-close-white.svg");
+}
+
+@media (max-width: 38rem) {
+    .navbar {
+        z-index: 1000;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+        padding: min(6vh, 10rem) 3em;
+        padding-top: 35%;
+        inset: 0 0 0 45%;
+
+        background: rgba(22, 22,22, 0.65);
+        backdrop-filter: blur(1rem);
+
+        transform: translateX(100%);
+        transition: transform 250ms ease-out;
+    }
+
+    .navbar[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle, .mobile-nav{
+        display: block;
+    }
+    .dropdown-content{
+        background: rgba(20, 20,20, 0.65);
+        position: relative;
+    }
+
+    .dropdown-content a{
+        min-width: 0%;
+        width: 100%;
+        display: flex;
+    }
+    .dropbtn, .dropdown-content{
+        width: 100%;
+    }
 }
 
 @keyframes slide-up {

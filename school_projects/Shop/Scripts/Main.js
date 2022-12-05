@@ -1,5 +1,6 @@
 const navigationToggle = document.querySelector('.nav-burger-menu-toggle');
 const navSideBar = document.querySelector('.nav-side-bar');
+const cartNav = document.querySelector("#cart");
 
 const addToCartButtons = document.querySelectorAll('#addToCart');
 
@@ -22,6 +23,13 @@ function onLoad(){
        
     }
 }
+
+// Clear cart
+cartNav.addEventListener('click', ()=> {
+    cartCount = 0;
+    document.getElementById('cartTotal').innerHTML = cartCount;
+    localStorage.setItem('cart', cartCount);
+});
 
 navigationToggle.addEventListener('click', ()=> {
     const visibility = navSideBar.getAttribute('side-bar-visible');

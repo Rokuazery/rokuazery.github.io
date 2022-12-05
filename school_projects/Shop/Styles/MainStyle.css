@@ -36,6 +36,7 @@ h1, h2, h3, h4, h5, h6, p{
 .card{
     background-color: var(--colorPrimary);
 }
+
 #background{
     background-image: url('../../../assets/wave.svg');
 }
@@ -48,7 +49,11 @@ h1, h2, h3, h4, h5, h6, p{
     background-image: url('../../../assets/wave3.svg');
 }
 
-#background, #background2, #background3{
+#background4{
+    background-image: url('../../../assets/wave4.svg');
+}
+
+#background, #background2, #background3, #background4{
     opacity: 0.5;
     width: 100%;
     height: 100%;
@@ -63,10 +68,10 @@ h1, h2, h3, h4, h5, h6, p{
 #layer-background{
     opacity: 0;
     animation: fade-layer-background-in 1000ms forwards;
-    animation-delay: 300ms;
+    animation-delay: 250ms;
     width: 100%;
     height: 100%;
-    margin-top: 55px;
+    margin-top: 50px;
     position: fixed;
     background-color: white;
     background-image: url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
@@ -91,7 +96,7 @@ h1, h2, h3, h4, h5, h6, p{
     font-weight: 600;
     text-decoration: none;
     padding: 14px 16px;
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   #navbar  {
@@ -108,7 +113,7 @@ h1, h2, h3, h4, h5, h6, p{
   }
 
   .nav-burger-menu-toggle{
-    position: absolute;
+    position:fixed;
     background-color: transparent;
     background-image: url("../../../assets/icon-menu-white.svg");
     background-repeat: no-repeat;
@@ -117,20 +122,41 @@ h1, h2, h3, h4, h5, h6, p{
     left: 5px;
     height: 2rem;
     aspect-ratio: 1;
+    z-index: 999999;
+}
+
+
+
+ .card-title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-text{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .nav-burger-menu-toggle[aria-expanded="true"] {
     background-image: url("../../../assets/icon-close-white.svg");
 }
 
-.nav-side-bar[side-bar-visible="true"] {
-    display: block;
-    background-color: black;
-    animation: slide-right 350ms forwards;
+.nav-side-bar[side-bar-visible=true], .nav-side-bar[side-bar-visible=false]  {
+    visibility: visible;
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    background: black;
+    backdrop-filter: blur(1rem);
+    animation: fade-background-in 350ms forwards;
 }
 
-.nav-side-bar[side-bar-visible="false"] {
-    animation: slide-left 350ms forwards;
+.nav-side-bar[side-bar-visible=false] {
+    animation: fade-background-out 350ms forwards;
 }
 
 .btn-center{
@@ -160,17 +186,14 @@ h1, h2, h3, h4, h5, h6, p{
 
 .products-content {
     position: absolute;
-    display: flex;
     justify-content:space-evenly;
     animation: slide-up 500ms forwards;
     width: 100%;
     height: 100%;
-    /* display: flex; */
+    display: flex;
     place-items: center;
     border-spacing: 5;
     z-index: -3;
-
-    padding: 50px;
 }
 
 .card{
@@ -180,6 +203,16 @@ h1, h2, h3, h4, h5, h6, p{
 #cart{
     margin-right: -15px;
     background-color: var(--colorSecondary);
+}
+
+@keyframes fade-background-in{
+    0%{ opacity: 0; }
+    100%{ opacity: 0.7;}
+}
+
+@keyframes fade-background-out{
+    0%{ opacity: 0.7; }
+    100%{ opacity: 0; visibility: hidden;}
 }
 
 @keyframes fade-layer-background-in{

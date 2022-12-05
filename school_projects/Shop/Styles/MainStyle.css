@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Roboto:wght@100&display=swap');
+
+
+:root{
+    --colorFontPrimary: white;
+    --colorFontSecondary: Silver;
+    --colorPrimary: rgb(42, 42,42);
+    --colorSecondary: rgb(32, 32,32);
+    --colorAccent: #084298;
+}
+
+*{
+    font-family: 'Almarai', sans-serif !important;
+}
+
+.btn-primary{
+    background-color: var(--colorAccent) !important;
+}
+
+body{
+    margin: 0;
+    color: white;
+    background-color: black;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    color: var(--colorFontPrimary);    
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.card{
+    background-color: var(--colorPrimary);
+}
+#background{
+    background-image: url('../../../assets/wave.svg');
+}
+
+#background2{
+    background-image: url('../../../assets/wave2.svg');
+}
+
+#background3{
+    background-image: url('../../../assets/wave3.svg');
+}
+
+#background, #background2, #background3{
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: bottom;
+    background-size:contain;
+    z-index: -10;
+}
+
+#layer-background{
+    opacity: 0;
+    animation: fade-layer-background-in 1000ms forwards;
+    animation-delay: 300ms;
+    width: 100%;
+    height: 100%;
+    margin-top: 55px;
+    position: fixed;
+    background-color: white;
+    background-image: url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size:cover;
+    z-index: -20;
+}
+
+#navbar {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    background-color: var(--colorPrimary);
+  }
+
+  #navbar a {
+    display: block;
+    float: right;
+    color: var(--colorFontSecondary);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 1.2em;
+  }
+
+  #navbar  {
+    display: block;
+  }
+
+
+  #navbar a:hover {
+    color: var(--colorFontPrimary);
+  }
+
+  #navbar a.active{
+    color: var(--colorFontPrimary);
+  }
+
+  .nav-burger-menu-toggle{
+    position: absolute;
+    background-color: transparent;
+    background-image: url("../../../assets/icon-menu-white.svg");
+    background-repeat: no-repeat;
+    border: 0;
+    top: 11px;
+    left: 5px;
+    height: 2rem;
+    aspect-ratio: 1;
+}
+
+.nav-burger-menu-toggle[aria-expanded="true"] {
+    background-image: url("../../../assets/icon-close-white.svg");
+}
+
+.nav-side-bar[side-bar-visible="true"] {
+    display: block;
+    background-color: black;
+    animation: slide-right 350ms forwards;
+}
+
+.nav-side-bar[side-bar-visible="false"] {
+    animation: slide-left 350ms forwards;
+}
+
+.btn-center{
+    margin-top: 5px;
+    display: block;
+    align-items: center;
+    place-items: center;
+}
+
+.cart-count{
+    margin-left: -15px;
+    display: inline;
+}
+
+.content {
+    position: absolute;
+    animation: slide-up 500ms forwards;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    z-index: -3;
+}
+
+.products-content {
+    position: absolute;
+    display: flex;
+    justify-content:space-evenly;
+    animation: slide-up 500ms forwards;
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    place-items: center;
+    border-spacing: 5;
+    z-index: -3;
+
+    padding: 50px;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#cart{
+    margin-right: -15px;
+    background-color: var(--colorSecondary);
+}
+
+@keyframes fade-layer-background-in{
+    0%{ opacity: 0; }
+    100%{ opacity: 0.3;}
+}
+
+@keyframes slide-up {
+    0%{ transform: translateY(100%); }
+    100%{ transform: translateY(0%); }
+}
+
+@keyframes slide-down {
+    0%{ transform: translateY(0%); }
+    100%{ transform: translateY(100%); }
+}
+
+@keyframes fade-in {
+    0%{ opacity: 0; }
+    100%{ opacity: 1;}
+}
+
+@keyframes fade-out {
+    0%{ opacity: 1; }
+    100%{ opacity: 0;}
+}

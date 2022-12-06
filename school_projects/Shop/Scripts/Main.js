@@ -1,5 +1,6 @@
 const navigationToggle = document.querySelector('.nav-burger-menu-toggle');
 const navSideBar = document.querySelector('.nav-side-bar');
+const navInnerSideBar = document.querySelector('.nav-side-bar-inner');
 const cartNav = document.querySelector("#cart");
 
 const addToCartButtons = document.querySelectorAll('#addToCart');
@@ -34,7 +35,12 @@ cartNav.addEventListener('click', ()=> {
 navigationToggle.addEventListener('click', ()=> {
     const visibility = navSideBar.getAttribute('side-bar-visible');
 
-    if(visibility == "false") {
+    // if(isFirstTime) {
+    //     navInnerSideBar.setAttribute("side-bar-visible", )
+    //     isFirstTime = true;
+    // }
+
+    if(visibility == "false" || !visibility) {
         setMainNavVisibility(true);
     } else{
         setMainNavVisibility(false);
@@ -43,6 +49,7 @@ navigationToggle.addEventListener('click', ()=> {
 
 function setMainNavVisibility(visible)
 {
+    navInnerSideBar.setAttribute("side-bar-visible", visible);
     navSideBar.setAttribute("side-bar-visible", visible);
     navigationToggle.setAttribute("aria-expanded", visible);
 }

@@ -67,8 +67,8 @@ h1, h2, h3, h4, h5, h6, p{
 
 #layer-background{
     opacity: 0;
-    animation: fade-layer-background-in 1000ms forwards;
     animation-delay: 250ms;
+    animation: fade-layer-background-in 1000ms forwards;
     width: 100%;
     height: 100%;
     margin-top: 50px;
@@ -144,6 +144,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .nav-side-bar[side-bar-visible=true], .nav-side-bar[side-bar-visible=false]  {
+    display: inline-block;
     visibility: visible;
     position:absolute;
     top:0px;
@@ -151,12 +152,36 @@ h1, h2, h3, h4, h5, h6, p{
     bottom:0px;
     left:0px;
     background: black;
-    backdrop-filter: blur(1rem);
     animation: fade-background-in 350ms forwards;
 }
 
 .nav-side-bar[side-bar-visible=false] {
     animation: fade-background-out 350ms forwards;
+}
+
+.nav-side-bar-inner[side-bar-visible=false], .nav-side-bar-inner[side-bar-visible=true]{
+    visibility: hidden;
+    display: inline-block;
+    width: 280px;
+    height: 100%;
+    display:inline;
+    position:absolute;
+    background: var(--colorSecondary);
+    animation-delay: 1000ms;
+    animation: fade-side-bar-inner-in 350ms forwards;
+    z-index: 99;
+}
+
+.nav-side-bar-inner[side-bar-visible=false]{
+    animation: fade-side-bar-inner-out 350ms forwards;
+}
+
+.nav-side-bar-inner{
+    visibility: hidden;
+}
+
+.nav-side-bar-inner{
+    visibility: hidden;
 }
 
 .btn-center{
@@ -213,6 +238,16 @@ h1, h2, h3, h4, h5, h6, p{
 @keyframes fade-background-out{
     0%{ opacity: 0.7; }
     100%{ opacity: 0; visibility: hidden;}
+}
+
+@keyframes fade-side-bar-inner-in{
+    0%{ transform: translateX(-100%); visibility: visible; }
+    100%{ transform: translateX(0%); visibility: visible; }
+}
+
+@keyframes fade-side-bar-inner-out{
+    0%{ transform: translateX(0%);  visibility: visible; }
+    100%{ transform: translateX(-100%); visibility: hidden; }
 }
 
 @keyframes fade-layer-background-in{

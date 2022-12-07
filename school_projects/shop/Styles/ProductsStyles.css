@@ -48,6 +48,31 @@
     box-shadow: 1px 3rem 6rem rgba(47, 120, 208, 0.35);
 }
 
+@media screen and (max-width: 800px) {
+    .card:hover{
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    .nav-a{
+        visibility: collapse;
+        position: fixed;
+        width: 0%;
+        height: 0%;
+    }
+
+    #layer-background{
+        background-size: cover;
+    }
+
+    .dropdown{
+        right: 5px;
+        position:fixed;
+        display: block;
+        visibility: visible;
+    }
+}
+
 /* @media screen and (max-width: 800px) {
     .products-content {
         position: absolute;

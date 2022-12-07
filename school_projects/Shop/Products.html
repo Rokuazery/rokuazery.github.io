@@ -9,7 +9,7 @@
     <link href="Styles/MainStyle.css" rel="stylesheet" type="text/css"/>
     <title>Clara's Shop: Products</title>
 </head>
-<body onload="onLoad()"> 
+<body onload="onLoad()" class="products-body"> 
     <div id="layer-background"></div>
     <div id="background"></div>
 
@@ -24,25 +24,27 @@
         <a href="Home.html">Home</a>
     </div>
 
-    <div class="nav-side-bar"></div>
+    <div class="nav-side-bar-darken"></div>
     <div class="nav-side-bar-inner">
 
     </div>
 
-    <div class="products-content">
+    <h2 style="padding-top: 80px; font-weight: 500;">OUR PRODUCTS</h2>
+    <hr>
+
+    <div class="products-content" id="products" onload="onProductLoad()">
         <!-- <h2>Clara's Shop</h2> -->
 
-        <div class="card" style="width: 18rem;">
+        <!-- <div class="card" style="width: 18rem;">
             <img src="https://cdn.discordapp.com/attachments/915998729104932887/1049320944436531252/61c62dd94238ccd4a30bfc7063d3a9b6.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Falcon - BG</h5>
               <p class="card-text">Rp899.000.00</p>
               <hr>
               <a href="#" class="btn btn-primary btn-center" id="addToCart">Add to Cart!</a>
+              <a href="#" class="btn btn-secondary btn-center" id="addToCart">View Details</a>
             </div>
           </div>
-
-          <!-- test -->
 
           <div class="card" style="width: 18rem;">
             <img src="https://cdn.discordapp.com/attachments/915998729104932887/1049321389758349382/78157cbac564b54794ef2b614a3b526e.jpg" class="card-img-top" alt="...">
@@ -51,6 +53,7 @@
               <p class="card-text">Rp649.000.00</p>
               <hr>
               <a href="#" class="btn btn-primary btn-center" id="addToCart">Add to Cart!</a>
+              <a href="#" class="btn btn-secondary btn-center" id="addToCart">View Details</a>
             </div>
           </div>
 
@@ -61,9 +64,11 @@
               <p class="card-text">Rp279.000.00</p>
               <hr>
               <a href="#" class="btn btn-primary btn-center" id="addToCart">Add to Cart!</a>
+              <a href="#" class="btn btn-secondary btn-center" id="addToCart">View Details</a>
             </div>
-          </div>
+          </div> -->
     </div>
 </body>
-<script src="Scripts/Main.js" defer></script>
+<script type="text/javascript" src="Scripts/Main.js" defer></script>
+<script type="text/javascript" src="Scripts/Products.js" defer></script>
 </html>

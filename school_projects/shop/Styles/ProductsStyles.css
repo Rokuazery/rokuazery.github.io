@@ -1,23 +1,17 @@
 .products-content {
+    margin: auto;
+    overflow-x: hidden;
     animation: slide-up 500ms both;
     padding-top: 5px;
     position: relative;
-    width: 100%;
+    min-width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     align-items: start;
 }
 
 .card{
-    visibility: visible;
-    transition: 0.2s;
-    margin: 0 auto;
-    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.5);
-    /* animation: slide-
-    p 500ms forwards; */
-}
-
-.card{
+    margin: auto;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

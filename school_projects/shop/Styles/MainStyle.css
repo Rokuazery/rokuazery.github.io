@@ -10,6 +10,7 @@
 }
 
 *{
+    font-size: 100%;
     font-family: 'Almarai', sans-serif !important;
 }
 
@@ -85,7 +86,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 #layer-background{
-    background-image: url('../Assets/background-0.avif');
+    background-image: url('../Assets/background-0.png');
     background-size: contain;
 }
 
@@ -100,7 +101,10 @@ h1, h2, h3, h4, h5, h6, p{
     background-color: black;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
     z-index: -20;
 }
 
@@ -249,6 +253,12 @@ h1, h2, h3, h4, h5, h6, p{
         margin-right: 3px;
         right: 5px;
         visibility: visible;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    *{
+        font-size: 50%;
     }
 }
 

@@ -96,7 +96,7 @@ function insertProducts() {
             ${priceTag}
           <hr>
           <a productId="${product.id}" class="btn btn-primary btn-center" id="addToCart">Add to Cart!</a>
-          <a productId="${product.id}" class="btn btn-secondary btn-center" id="viewDetails">View</a>
+          <a productId="${product.id}" class="btn btn-secondary btn-center" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="viewDetails">Details</a>
         </div>
       </div>
       </div>`;

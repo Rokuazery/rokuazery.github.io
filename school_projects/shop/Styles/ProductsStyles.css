@@ -65,12 +65,12 @@
         background-size: cover;
     }
 
-    .dropdown{
+    /* .dropdown{
         right: 5px;
         position:fixed;
         display: block;
         visibility: visible;
-    }
+    } */
 }
 
 /* @media screen and (max-width: 800px) {

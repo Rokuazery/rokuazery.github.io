@@ -45,29 +45,26 @@ h1, h2, h3, h4, h5, h6, p{
     word-wrap: break-word;
 }
 
-.card{
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+.brandingTitle{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 24px;
 }
 
 #background{
-    background-image: url('../../../assets/wave.svg');
+    background-image: url('../assets/wave.svg');
 }
 
 #background2{
-    background-image: url('../../../assets/wave2.svg');
+    background-image: url('../assets/wave2.svg');
 }
 
 #background3{
-    background-image: url('../../../assets/wave3.svg');
+    background-image: url('../Assets/wave3.svg');
 }
 
 #background4{
-    background-image: url('../../../assets/wave4.svg');
+    background-image: url('../Assets/wave4.svg');
 }
 
 #background, #background2, #background3, #background4{
@@ -83,11 +80,13 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 #layer-background-contact{
-    background-image: url('https://cdn.discordapp.com/attachments/891747351851577444/1049589659782623252/Untitled.png');
+    background-image: url('../Assets/background-contact.png');
+    background-size: cover;
 }
 
 #layer-background{
-    background-image: url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-image: url('../Assets/background-0.avif');
+    background-size: contain;
 }
 
 #layer-background, #layer-background-contact{
@@ -98,11 +97,10 @@ h1, h2, h3, h4, h5, h6, p{
     height: 100%;
     margin-top: 50px;
     position: fixed;
-    background-color: white;
+    background-color: black;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
-    background-size:cover;
     z-index: -20;
 }
 
@@ -128,7 +126,6 @@ h1, h2, h3, h4, h5, h6, p{
     display: block;
   }
 
-
   #navbar a:hover {
     color: var(--colorFontPrimary);
   }
@@ -137,13 +134,21 @@ h1, h2, h3, h4, h5, h6, p{
     color: var(--colorFontPrimary);
   }
 
+  .dropdown{
+    height: 0%;
+    visibility: collapse;
+    margin-right: 10px;
+    margin-top: 7px;
+    float: right;
+  }
+
   .nav-burger-menu-toggle{
     position:fixed;
     background-color: transparent;
     background-image: url("../../../assets/icon-menu-white.svg");
     background-repeat: no-repeat;
     border: 0;
-    top: 11px;
+    top: 9px;
     left: 5px;
     height: 2rem;
     aspect-ratio: 1;
@@ -152,18 +157,6 @@ h1, h2, h3, h4, h5, h6, p{
 
 .btn-expand{
     width: 100% !important;
-}
-
-.card-title{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.card-text{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .nav-burger-menu-toggle[aria-expanded="true"] {
@@ -236,54 +229,26 @@ h1, h2, h3, h4, h5, h6, p{
     z-index: -3;
 }
 
-/* .products-content {
-    float:left;
-    position: absolute;
-    justify-content:space-evenly;
-    animation: slide-up 500ms forwards;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    place-items: center;
-    border-spacing: 5;
-    padding-top: 50px;
-    z-index: -3;
-} */
-
-.products-content {
-    padding-top: 5px;
-    position: relative;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    align-items: start;
-}
-
 @media screen and (max-width: 800px) {
-    .products-content {
-        position: absolute;
-        display: block;
-        justify-content: space-evenly;
+    .nav-a{
+        visibility: collapse;
+        position: fixed;
+        width: 0%;
+        height: 0%;
     }
-  }
 
-.card{
-    visibility: hidden;
-    transition: 0.2s;
-    margin: 0 auto;
-    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.5);
-    /* animation: slide-up 500ms forwards; */
+    #layer-background{
+        background-size: cover;
+    }
+
+    .dropdown{
+        right: 5px;
+        position:fixed;
+        display: block;
+        visibility: visible;
+    }
 }
 
-.card.show{
-    animation: slide-up 500ms forwards;
-  }
-
-.card:hover{
-    transition: 0.2s;
-    transform: translateY(-0.5%);
-    box-shadow: 1px 3rem 6rem rgba(47, 120, 208, 0.35);
-}
 
 #cart{
     margin-right: -15px;
@@ -302,11 +267,11 @@ h1, h2, h3, h4, h5, h6, p{
 
 @keyframes fade-side-bar-inner-in{
     0%{ transform: translateX(-100%); visibility: visible; }
-    100%{ transform: translateX(0%); visibility: visible; }
+    100%{ transform: translateX(-15%); visibility: visible; }
 }
 
 @keyframes fade-side-bar-inner-out{
-    0%{ transform: translateX(0%);  visibility: visible; }
+    0%{ transform: translateX(-15%);  visibility: visible; }
     100%{ transform: translateX(-100%); visibility: hidden; }
 }
 

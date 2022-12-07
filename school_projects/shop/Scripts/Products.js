@@ -50,7 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
             cartItems.push(product);
 
             // mengupdate 'cartTotal' yang merupakan jumlah dari barang yang kita masukan ke cart atau keranjang
-            document.getElementById('cartTotal').innerHTML = cartItems.length;
+            cartsTotal.forEach(cartTotal => {
+                cartTotal.innerHTML = cartItems.length;
+            });
+            // document.getElementById('cartTotal').innerHTML = cartItems.length;
             // menyimpan data 'cartItems' untuk menyimpan barang-barang yang ada di cart atau keranjang
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
         });
@@ -76,7 +79,7 @@ function insertProducts() {
 
         var priceTag = "";
         if(randomDiscount > 0.0) {
-            priceTag = `<p class="card-text text-white-50"><s>${currency}${product.price}.00</s> <span style='color: red; font-weight: 600;'>&nbsp; -</span> <span style='color: lightgreen; font-weight: 600;'>${randomDiscount * 100}%</span></p>
+            priceTag = `<p class="card-text text-white-50"><s>${currency}${product.price}.00</s> <span style='color: crimson; font-weight: 600;'>&nbsp; -</span> <span style='color: lightgreen; font-weight: 600;'>${randomDiscount * 100}%</span></p>
             <p class="card-text">${currency}${discountedprice}.00</p>`;
         }
         else{

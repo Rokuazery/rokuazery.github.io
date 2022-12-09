@@ -11,19 +11,12 @@
     <link href="Styles/ProductsStyles.css" rel="stylesheet" type="text/css"/>
     <title>Clara's Shop: Products</title>
 </head>
-<body onload="onLoad()" class="products-body"> 
+<body onload="onLoad()" class="products-body" current-page="Products"> 
     <div id="layer-background"></div>
     <div id="background"></div>
 
     <button class="nav-burger-menu-toggle" aria-expanded="false"></button>
 
-
-    <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button> -->
-
-<!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -43,16 +36,10 @@
 
 
     <div class="dropdown" style="z-index: 999;">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Page Menu
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark" style="position: fixed;">
-        <li><a class="dropdown-item" href="Home.html">Home</a></li>
-        <li><a class="dropdown-item active" href="#">Products</a></li>
-        <li><a class="dropdown-item" href="Contact.html">Contact</a></li>
-        <li><a class="dropdown-item" href="About.html">About</a></li>
+      <button class="btn btn-secondary dropdown-toggle" id="current-page" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <ul class="dropdown-menu dropdown-menu-dark navigation-menu-dropdown" style="position: fixed;">
+        <li><a class="dropdown-item" id="cart">Cart<p class="cart-count" id="cartTotal">0</p></a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" id="cart" href="#">Cart<p class="cart-count" id="cartTotal">0</p></a></li>
       </ul>
     </div>
     
@@ -67,11 +54,6 @@
     
         <!-- <P class="brandingTitle">CLARA'S SHOP</P> -->
         <a class="active nav-a" id="cart">Cart<p class="cart-count" id="cartTotal">0</p></a>
- 
-        <a class="nav-a" href="About.html">About</a>
-        <a class="nav-a" href="Contact.html">Contact</a>
-        <a class="active nav-a" href="javascript:void(0)">Products</a>
-        <a class="nav-a" href="Home.html">Home</a>
     </div>
 
     <div class="nav-side-bar-darken"></div>

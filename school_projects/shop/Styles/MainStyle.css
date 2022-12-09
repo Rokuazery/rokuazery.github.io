@@ -18,19 +18,12 @@
     background-color: var(--colorAccent) !important;
 }
 
-/* html {
-    margin-left: calc(100vw - 100%);
-    margin-right: 0;
-} */
-
 body{
     margin: 0;
     color: white;
     background-color: black;
     overflow-x: hidden;
     overflow-y: hidden;
-    /* overflow-y: auto;
-    scrollbar-gutter: stable; */
 }
 
 .products-body {
@@ -159,6 +152,19 @@ h1, h2, h3, h4, h5, h6, p{
     height: 2rem;
     aspect-ratio: 1;
     z-index: 999999;
+}
+
+.glass-effect{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.transparent{
+    background-color: transparent;
 }
 
 .btn-expand{

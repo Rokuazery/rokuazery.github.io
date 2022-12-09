@@ -10,22 +10,16 @@
     <link href="Styles/MainStyle.css" rel="stylesheet" type="text/css"/>
     <title>Clara's Shop: About</title>
 </head>
-<body onload="onLoad()"> 
+<body onload="onLoad()" current-page="About"> 
     <div id="layer-background"></div>
     <div id="background3"></div>
     <button class="nav-burger-menu-toggle" aria-expanded="false"></button>
 
     <div class="dropdown" style="z-index: 999;">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Page Menu
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark" style="position: fixed;">
-        <li><a class="dropdown-item" href="Home.html">Home</a></li>
-        <li><a class="dropdown-item" href="Products.html">Products</a></li>
-        <li><a class="dropdown-item" href="Contact.html">Contact</a></li>
-        <li><a class="dropdown-item active" href="#">About</a></li>
-        <li><hr class="dropdown-divider"></li>
+      <button class="btn btn-secondary dropdown-toggle" id="current-page" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <ul class="dropdown-menu dropdown-menu-dark navigation-menu-dropdown" style="position: fixed;">
         <li><a class="dropdown-item" id="cart" href="#">Cart<p class="cart-count" id="cartTotal">0</p></a></li>
+        <li><hr class="dropdown-divider"></li>
       </ul>
     </div>
 
@@ -39,10 +33,6 @@
       </div>
 
         <a class="active nav-a" id="cart">Cart<p class="cart-count" id="cartTotal">0</p></a>
-        <a class="active nav-a" href="javascript:void(0)">About</a>
-        <a class="nav-a" href="Contact.html">Contact</a>
-        <a class="nav-a" href="Products.html">Products</a>
-        <a class="nav-a" href="Home.html">Home</a>
     </div>
 
     <div class="nav-side-bar-darken"></div>
@@ -51,25 +41,18 @@
     </div>
 
     <div class="content">
-        <figure class="text-center">
-            <blockquote class="blockquote">
-              <p>Changing your styles.</p>
-            </blockquote>
-            <figcaption class="blockquote-footer">
-              With Fashionable Designs | <cite title="Source Title">Made by Clara Imanuel</cite>
-            </figcaption>
-          </figure>
-        <!-- <h2>Clara's Shop</h2> -->
-
-        <!-- <div class="card" style="width: 18rem;">
-            <img src="https://cdn.discordapp.com/attachments/915998729104932887/1049320944436531252/61c62dd94238ccd4a30bfc7063d3a9b6.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Falcon - Black Grey </h5>
-              <p class="card-text">Rp249.000</p>
-              <hr>
-              <a href="#" class="btn btn-primary btn-center" id="addToCart">Add to Cart!</a>
-            </div>
-          </div> -->
+      <div class="card glass-effect" style="width: 19rem;">
+        <img src="https://media.tenor.com/aKFaZBrZFYcAAAAC/excited-spin.gif" class="card-img-top rounded-1">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: 550;">Clara Imanuel - XI RPL 2</h5>
+          <p class="card-text" style="opacity: 0.6;">Tugas membuat online shop design menggunakan CSS, Bootstrap, JS, dan HTML.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <a href="https://github.com/Rokuazery">
+            <li class="list-group-item transparent text-center" style="color: white; opacity: 0.4;">Dibantu oleh Rokuazery</li>
+          </a>
+        </ul>
+      </div>
     </div>
 </body>
 <script src="Scripts/Main.js" defer></script>

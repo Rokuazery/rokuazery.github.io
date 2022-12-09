@@ -46,11 +46,11 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 #background{
-    background-image: url('../assets/wave.svg');
+    background-image: url('../Assets/wave.svg');
 }
 
 #background2{
-    background-image: url('../assets/wave2.svg');
+    background-image: url('../Assets/wave2.svg');
 }
 
 #background3{

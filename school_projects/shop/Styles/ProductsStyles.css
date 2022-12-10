@@ -1,4 +1,4 @@
-.products-content {
+/* .products-content {
     margin: auto;
     animation: slide-up 500ms both;
     padding-top: 5px;
@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     align-items: start;
-}
+} */
 
 .card{
     margin: auto;
@@ -47,10 +47,10 @@
 }
 
 @media screen and (max-width: 800px) {
-    .products-content{
+    /* .products-content{
         overflow-x: hidden;
     }
-    
+     */
     .card:hover{
         transform: scale(1);
         box-shadow: none;

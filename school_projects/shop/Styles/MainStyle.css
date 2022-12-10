@@ -226,9 +226,10 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .content {
+
     position: absolute;
     animation: slide-up 500ms forwards;
-    width: 100%;
+    min-width: 100%;
     height: 100%;
     display: grid;
     place-items: center;
@@ -246,7 +247,22 @@ body[current-page="About"], body[current-page="Products"]{
     overflow-y: auto;
 }
 
+.about-content, .products-content{
+    margin: auto;
+    animation: slide-up 500ms both;
+    padding-top: 5px;
+    position: relative;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    align-items: start;
+}
+
 @media screen and (max-width: 800px) {
+    .about-content, .products-content{
+        overflow-x: hidden;
+    }
+
     .nav-a{
         visibility: collapse;
         position: fixed;

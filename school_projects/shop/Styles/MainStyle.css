@@ -11,6 +11,7 @@
 
 *{
     font-size: 100%;
+    box-sizing: border-box;
     font-family: 'Almarai', sans-serif !important;
 }
 
@@ -24,10 +25,6 @@ body{
     background-color: black;
     overflow-x: hidden;
     overflow-y: hidden;
-}
-
-.products-body {
-    overflow-y:visible;
 }
 
 h1, h2, h3, h4, h5, h6, p{
@@ -239,6 +236,14 @@ h1, h2, h3, h4, h5, h6, p{
     padding: 0;
     margin: 0;
     z-index: -3;
+}
+
+.center{
+    margin: auto;
+}
+
+body[current-page="About"], body[current-page="Products"]{
+    overflow-y: auto;
 }
 
 @media screen and (max-width: 800px) {

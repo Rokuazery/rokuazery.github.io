@@ -39,8 +39,11 @@
 
 .card:hover{
     transition: 0.2s;
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 1px 3rem 6rem rgba(47, 120, 208, 0.35);
+    backface-visibility: hidden;
+    filter: blur(.0px);
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @media screen and (max-width: 800px) {

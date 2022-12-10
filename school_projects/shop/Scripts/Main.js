@@ -8,6 +8,7 @@ var cartsTotal = null;
 var navigationMenus = [
     {name: "Home", path: "Home.html"},
     {name: "Products", path: "Products.html"},
+    {name: "News", path: "News.html"},
     {name: "Contact", path: "Contact.html"},
     {name: "About", path: "About.html"}
 ];
@@ -35,7 +36,7 @@ function onLoad(){
     var navigationMenuItems = "";
     navigationMenus.reverse().forEach(navMenu =>{
         if(currentPage == navMenu.name){
-            navigationMenuItems += `<a class="nav-a active" href="${navMenu.path}">${navMenu.name}</a>`;
+            navigationMenuItems += `<a class="nav-a active">${navMenu.name}</a>`;
             return;
         }
         navigationMenuItems += `<a class="nav-a" href="${navMenu.path}">${navMenu.name}</a>`;
@@ -51,7 +52,6 @@ function onLoad(){
 
     if(cartItemsTemp && cartItemsTemp.length > 0){
         cartItems = JSON.parse(cartItemsTemp);
-
             cartsTotal.forEach(cartTotal => {
             cartTotal.innerHTML = cartItems.length;
         });
@@ -73,12 +73,7 @@ navSideBar.addEventListener('click', ()=> {
 
 navigationToggle.addEventListener('click', ()=> {
     const visibility = navSideBar.getAttribute('side-bar-visible');
-
-    // if(isFirstTime) {
-    //     navInnerSideBar.setAttribute("side-bar-visible", )
-    //     isFirstTime = true;
-    // }
-
+    
     if(visibility == "false" || !visibility){
         setMainNavVisibility(true);
     } else{

@@ -2,6 +2,8 @@
 const introductionTitle = document.getElementsByClassName("header-title")[0];
 const navLinks = document.querySelectorAll('.nav-link');
 
+// function removeSelectedTab
+
 // Define a callback function to be executed when the target element enters or exits the viewport
 function handleIntersection(entries, observer) {
     entries.forEach((entry) => {
@@ -12,6 +14,7 @@ function handleIntersection(entries, observer) {
             // You can perform actions like loading an image, playing a video, etc.
             entry.target.classList.add('in-viewport'); // Add a CSS class, for example
             // observer.unobserve(entry.target); // Stop observing once it's in the viewport
+            
         } else {
             // console.log('remove');
             // Element has exited the viewport
@@ -55,13 +58,13 @@ navLinks.forEach(navLink => {
 });
 
 const headerTexts = [
-    `My name is\n Fenlianto Nanda Setiawan`,
-    `I'm a passionate\n Full Stack Developer`,
+    `My name is\nFenlianto Nanda Setiawan`,
+    `I'm a passionate\nFull Stack Developer`,
 ];
 
 const headerWithMarkTexts = [
-    `My name is<mark class="name"><br> Fenlianto Nanda Setiawan</mark>`,
-    `I'm a passionate <mark class="name"><br> Full Stack Developer</mark>`,
+    `My name is<mark class="name"><br>Fenlianto Nanda Setiawan</mark>`,
+    `I'm a passionate <mark class="name"><br>Full Stack Developer</mark>`,
 ];
 
 let currentIndex = 0;

@@ -6,7 +6,6 @@
 
 *{
     font-family: 'Roboto', sans-serif;
-    
 }
 
 .tech-stack-container{
@@ -16,11 +15,12 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(218, 218, 218) !important;
+    background-color: rgb(218, 218, 218);
 }
 
+
 mark.name, mark, header{
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 .cursor {
@@ -28,7 +28,7 @@ mark.name, mark, header{
 }
 
 pre{
-    overflow-y: hidden !important;
+    overflow-y: hidden;
 }
 
 .header-container{
@@ -69,7 +69,6 @@ pre{
     
     transition: 500ms;
     
-    animation: scale 5s linear infinite !important;
 }
 
 .portrait{
@@ -85,14 +84,25 @@ pre{
     background-color: white;
 }
 
-.portrait-container:hover{
+/* .portrait-container:hover{
     border: 5px solid var(--secondary);
     transform: scale(1.1);
+} */
+
+
+/* .section-title{
+    transition: 250ms ease-in-out;
 }
+
+
+.section-title-center{
+    
+} */
 
 .section-container{
     padding: 3em 5em;
     /* border-top: 1px solid silver; */
+    /* height: calc(100vh - 69px); */
     height: 100vh;
 }
 
@@ -115,9 +125,11 @@ pre{
 }
 
 footer {
-    bottom: 0;
+    bottom: 100px;
+    z-index: 99;
     left: 0;
     right: 0;
+    bottom: 0;
     padding-top: 1em;
     background: rgb(218,218,218);
     color: black;
@@ -125,7 +137,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
   }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -133,7 +147,7 @@ ul {
 }
 
 nav {
-    padding: 25px;
+    padding: 20px;
     background-color: white; /* Background color for the navbar */
     color: #333; /* Text color for links */
     position: sticky;
@@ -156,14 +170,14 @@ nav ul li {
 
 .nav-link{
     text-decoration: none; /* Remove underlines from links */
-    color: rgb(110, 110, 110) !important;
+    color: rgb(110, 110, 110);
     display: inline-block;
     position: relative;
-    /* color: var(--primary); */
+    padding: 5px;
   }
 
 .nav-link:hover {
-      color: black !important;
+      color: black;
   }
 
 nav ul li a::after {
@@ -171,18 +185,34 @@ nav ul li a::after {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
+    height: 3px;
+    border-radius: 1px;
     bottom: 0;
     left: 0;
     background-color: var(--primary);
-    transform-origin: bottom right;
+    transform-origin: bottom center;
     transition: transform 0.2s ease-out;
   }
   
-  nav ul li a:hover::after {
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-active{
+    color: #282828;
+}
+
+.nav-active::after{
     transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+    background-color: #282828;
+}
+
+  
+h1, h2,h3,h4{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
 
 @media screen and (min-width: 1200px) {
     .header-titleH{
@@ -191,8 +221,6 @@ nav ul li a::after {
 
     .section-container{
         padding: 5em 10em;
-        
-        height: 100vh;
     }
 
 
@@ -243,18 +271,18 @@ x
         border-radius: 50%;
     }
 }
-
+/* 
 @keyframes scale{
   0%{
     transform: scale(1)
   }
   50%{
-    transform: scale(0.9);
+    transform: scale(0.9);x
   }
   100%{
     transform: scale(1);
   }
-}
+} */
 
 @keyframes fade {
     0%, 100% {
